@@ -67,17 +67,7 @@ namespace visit {
             }
         };
     }
-    /*Visitor Base :
-        Pretty Cool Class made by urs truly. For a Generic Class that should be Pure virtual
-        and visitable, inerit VisitableBase with CRTP, and all the other classes that will inherit
-        from it (No other easier way). VisitableBase will then have 3 type definitions:
-        
-        VisitorReturnType: Inherit this in your visitor that returns a value. templated return type
-        VisitorType: Inherit this in you visitor that returns nothing.
-        Visitable: Inherit this in the classes that derive from your generic class (using CRTP)
-
-
-    */
+    
     template<typename Derived, typename...Args>
     class VisitableBase {
     public:
