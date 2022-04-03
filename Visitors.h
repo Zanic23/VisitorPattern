@@ -45,8 +45,6 @@ namespace visit {
                 getPtr()->~ReturnType();
             }
         protected:
-            void returnValue(ReturnType&& retval) { new(this->retval) ReturnType(std::move(retval)); }
-            void returnValue(ReturnType const& retval) { new(this->retval) ReturnType(retval); }
             template<typename U>
             void returnValue(U&& retval) {
                 new(this->retval) ReturnType(std::forward<U>(retval));
